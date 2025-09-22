@@ -11,7 +11,6 @@ const menuStyle = ref<Record<string, string>>({})
 
 const visible = computed(() => menuState.visible)
 
-// 移至 MenuTree 组件中处理点击逻辑
 
 const calculatePosition = async () => {
   await nextTick()
