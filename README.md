@@ -24,14 +24,14 @@ npm run dev
 1. 作为库安装与使用
 
 ```bash
-npm install vue-rightclick-menu
+npm install @foreverempty_/vue-rightclick-menu
 ```
 
 在项目中：
 
 ```ts
-import { ContextMenu, registerComponentMenu } from 'vue-rightclick-menu'
-import 'vue-rightclick-menu/style/context-menu.css' 
+import { ContextMenu, registerComponentMenu } from '@foreverempty_/vue-rightclick-menu'
+import '@foreverempty_/vue-rightclick-menu/style/context-menu.css' 
 ```
 
 2. 在任意元素上注册菜单：
