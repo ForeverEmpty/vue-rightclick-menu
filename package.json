@@ -20,7 +20,8 @@
   "module": "dist/vue-rightclick-menu.es.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "styles"
   ],
   "license": "MIT",
   "exports": {

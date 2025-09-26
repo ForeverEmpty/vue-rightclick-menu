@@ -31,7 +31,7 @@ npm install vue-rightclick-menu
 
 ```ts
 import { ContextMenu, registerComponentMenu } from 'vue-rightclick-menu'
-import 'vue-rightclick-menu/dist/style.css' // 如你将样式拆分为单独文件，可引入
+import 'vue-rightclick-menu/style/context-menu.css' 
 ```
 
 2. 在任意元素上注册菜单：
@@ -128,22 +128,49 @@ export type MenuItem =
 - 容器使用 `role="menu"`、子项使用 `role="menuitem"`/`role="separator"`
 - 支持 ESC 关闭与点击外部关闭
 
-## 开发命令
+## 自定义样式
 
-```bash
-# 开发
-npm run dev
+你可以通过以下方式自定义右键菜单的样式：
 
-# 类型检查 + 生产构建
-npm run build
+### 1. 覆盖默认 CSS
 
-# 预览（本地预览 dist）
-npm run preview
+组件默认样式位于 `styles/context-menu.css`。你可以在你的项目中引入自己的 CSS 文件，并覆盖默认样式。例如：
 
-# Lint & 格式化
-npm run lint
-npm run format
+```css
+/* 覆盖菜单背景色和字体颜色 */
+.context-menu {
+  background: #222;
+  color: #fff;
+}
+
+/* 自定义菜单项悬停效果 */
+.context-menu-item:hover {
+  background: #444;
+  color: #ffd700;
+}
 ```
+
+或参考 `exampless/coustomStyle.css`。
+
+确保你的自定义样式在默认样式之后加载。
+
+### 2. 使用深度选择器（Vue 3）
+
+如果你在 `App.vue` 或其他组件中使用 `<style scoped>`，可以通过深度选择器覆盖子组件样式：
+
+```vue
+<style scoped>
+/* ::v-deep 用于穿透子组件样式 */
+::v-deep .context-menu {
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+</style>
+```
+
+### 3. 直接修改样式文件
+
+你也可以直接修改 `styles/context-menu.css` 文件，来满足你的个性化需求。
 
 ## 许可证
 

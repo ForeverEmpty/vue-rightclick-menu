@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { useTemplateRef, onMounted, onUnmounted, nextTick, ref, watch, computed } from 'vue'
 import type { ContextMenuProps } from './types'
-//
 import MenuTree from './MenuTree.vue'
 import { menuState } from '@/store/menuStateStore'
 
@@ -10,7 +9,6 @@ const contextMenuRef = useTemplateRef<HTMLElement>('contextMenu')
 const menuStyle = ref<Record<string, string>>({})
 
 const visible = computed(() => menuState.visible)
-
 
 const calculatePosition = async () => {
   await nextTick()
@@ -76,19 +74,3 @@ onUnmounted(() => {
     <MenuTree :items="menuState.menuItems" :autoClose="props.autoClose" />
   </div>
 </template>
-<style scoped>
-.context-menu {
-  position: fixed;
-  min-height: 40px;
-  width: 220px;
-  z-index: 1000;
-  background-color: #fff;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  box-shadow:
-    0 10px 30px rgba(0, 0, 0, 0.1),
-    0 1px 2px rgba(0, 0, 0, 0.06);
-  padding: 4px;
-}
-
-</style>

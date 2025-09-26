@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue'
-import { registerComponentMenu } from '../src/util/registerComponentMenu'
-import ContextMenu from './components/ContextMenu/ContextMenu.vue'
+import { registerComponentMenu } from '@/util/registerComponentMenu'
+import ContextMenu from '@/components/ContextMenu/ContextMenu.vue'
 import type { MenuItem } from '@/types/menu'
 
 onMounted(() => {
