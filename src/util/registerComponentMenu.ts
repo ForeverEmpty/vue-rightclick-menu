@@ -3,12 +3,10 @@ import type { MenuItem } from '@/types/menu'
 
 export function registerComponentMenu(component: HTMLElement, menuItems: MenuItem[]) {
   if (!component) {
-    console.error('组件不存在')
-    return
+    throw new Error('Component is null or undefined')
   }
   if (menuItems.length === 0) {
-    console.error('菜单项为空')
-    return
+    throw new Error('Menu items are empty')
   }
 
   const handler = (e: MouseEvent) => {
