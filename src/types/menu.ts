@@ -9,7 +9,7 @@ export interface MenuItemBase {
 }
 
 export interface NormalMenuItem extends MenuItemBase {
-  type: 'normal'
+  type?: 'normal'
   onClick?: () => void
   action?: string
 }

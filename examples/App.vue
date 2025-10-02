@@ -8,12 +8,11 @@ onMounted(() => {
   const demoItems = ref<MenuItem[]>([
     {
       id: 'copy',
-      type: 'normal',
       label: '复制',
       action: 'copy',
       onClick: () => console.log('copy'),
     },
-    { id: 'paste', type: 'normal', label: '粘贴', action: 'paste', disabled: true },
+    { id: 'paste', label: '粘贴', action: 'paste', disabled: true },
     { id: 'div1', type: 'divider' },
     {
       id: 'check1',
