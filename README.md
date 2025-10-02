@@ -31,7 +31,7 @@ npm install @foreverempty_/vue-rightclick-menu
 
 ```ts
 import { ContextMenu, registerComponentMenu } from '@foreverempty_/vue-rightclick-menu'
-import '@foreverempty_/vue-rightclick-menu/style/context-menu.css' 
+import '@foreverempty_/vue-rightclick-menu/style/context-menu.css'
 ```
 
 2. 在任意元素上注册菜单：
@@ -163,7 +163,7 @@ export type MenuItem =
 /* ::v-deep 用于穿透子组件样式 */
 ::v-deep .context-menu {
   border-radius: 8px;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
 }
 </style>
 ```
