@@ -6,7 +6,13 @@ import type { MenuItem } from '@/types/menu'
 
 onMounted(() => {
   const demoItems = ref<MenuItem[]>([
-    { id: 'copy', type: 'normal', label: '复制', action: 'copy', onClick: () => console.log('copy') },
+    {
+      id: 'copy',
+      type: 'normal',
+      label: '复制',
+      action: 'copy',
+      onClick: () => console.log('copy'),
+    },
     { id: 'paste', type: 'normal', label: '粘贴', action: 'paste', disabled: true },
     { id: 'div1', type: 'divider' },
     {
@@ -19,24 +25,28 @@ onMounted(() => {
       },
     },
     {
-    id: 'view',
-    type: 'multile',
-    label: '视图',
-    children: [
-      { id: 'zoomIn', type: 'normal', label: '放大', onClick: () => console.log('zoom in') },
-      { id: 'zoomOut', type: 'normal', label: '缩小', onClick: () => console.log('zoom out') },
-      { id: 'div1', type: 'divider' },
-      { id: 'showLine', type: 'checkbox', label: '显示行号', checked: true, onClick: c => console.log('checked', c) },
-      {
-        id: 'more',
-        type: 'multile',
-        label: '更多',
-        children: [
-          { id: 'toggleStatusBar', type: 'normal', label: '状态栏', onClick: () => {} },
-        ],
-      },
-    ],
-  }
+      id: 'view',
+      type: 'multile',
+      label: '视图',
+      children: [
+        { id: 'zoomIn', type: 'normal', label: '放大', onClick: () => console.log('zoom in') },
+        { id: 'zoomOut', type: 'normal', label: '缩小', onClick: () => console.log('zoom out') },
+        { id: 'div1', type: 'divider' },
+        {
+          id: 'showLine',
+          type: 'checkbox',
+          label: '显示行号',
+          checked: true,
+          onClick: (c) => console.log('checked', c),
+        },
+        {
+          id: 'more',
+          type: 'multile',
+          label: '更多',
+          children: [{ id: 'toggleStatusBar', type: 'normal', label: '状态栏', onClick: () => {} }],
+        },
+      ],
+    },
   ])
 
   const selectors = ['.test', '.custom-element', '#special-div', '[data-menu]']
