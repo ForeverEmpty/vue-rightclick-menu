@@ -1,6 +1,6 @@
 {
   "name": "@foreverempty_/vue-rightclick-menu",
-  "version": "0.2.0",
+  "version": "0.2.3",
   "private": false,
   "type": "module",
   "engines": {
@@ -29,6 +29,10 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/vue-rightclick-menu.es.js",
       "require": "./dist/vue-rightclick-menu.umd.js"
+    },
+    "./styles/*": {
+      "import": "./styles/*",
+      "require": "./styles/*"
     }
   },
   "peerDependencies": {
