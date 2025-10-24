@@ -11,11 +11,14 @@ export interface ELemnetMenu extends HTMLElement {
   };
 }
 
-export const vMenu: Directive<ELemnetMenu, RightClickContextProps> = {
+export const vMenu: Directive<
+  ELemnetMenu,
+  Omit<RightClickContextProps, "id" | "top" | "left">
+> = {
   mounted(el, binding) {
     if (!binding.value) return;
-
-    const instance = Menu(binding.value);
+    const props: RightClickContextProps = { top: 0, left: 0, ...binding.value };
+    const instance = Menu(props);
     const handler = (e: Event) => {
       e.preventDefault();
       const mouseEvent = e as MouseEvent;
@@ -23,7 +26,7 @@ export const vMenu: Directive<ELemnetMenu, RightClickContextProps> = {
         .setPos(mouseEvent.clientX, mouseEvent.clientY)
         .open();
     };
-    
+
     el.addEventListener("contextmenu", handler);
 
     el[INSTANCE_KEY] = {

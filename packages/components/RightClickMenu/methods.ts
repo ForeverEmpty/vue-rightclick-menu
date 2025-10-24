@@ -113,12 +113,12 @@ const CreateRightClickMenu = (
     return menuInstance;
   };
 
-  const setProps = (props: RightClickContextProps) => {
+  const setProps = (props: Partial<Omit<RightClickContextProps, "id">>) => {
     if (!instance || !container) return menuInstance;
     if (!menuPropsMap.get(_props.id!)) return menuInstance;
-    if (isEqual(_props, { id: _props.id, ...props })) return menuInstance;
+    if (isEqual(_props, { ..._props, ...props })) return menuInstance;
 
-    _props = { id: _props.id, ...props };
+    _props = { ..._props, ...props };
     updateMenu();
     menuPropsMap.set(_props.id!, _props);
     return menuInstance;

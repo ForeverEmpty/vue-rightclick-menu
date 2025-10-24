@@ -97,7 +97,7 @@ const calculatePosition = async () => {
 };
 
 watch(
-  () => [() => props.top, () => props.left, visible.value],
+  () => [() => props.top, () => props.left, () => visible.value],
   () => {
     if (visible.value) calculatePosition();
   },

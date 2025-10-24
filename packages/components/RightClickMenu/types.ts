@@ -39,7 +39,9 @@ export interface RightClickMenuInstance {
   changeVisible(): void;
   setVisible(value: boolean): void;
   setPos(x: number, y: number): RightClickMenuInstance;
-  setProps(props: RightClickContextProps): RightClickMenuInstance;
+  setProps(
+    props: Partial<Omit<RightClickContextProps, "id">>
+  ): RightClickMenuInstance;
   destroy(): void;
 }
 

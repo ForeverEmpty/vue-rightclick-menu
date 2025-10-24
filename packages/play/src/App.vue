@@ -134,8 +134,6 @@ delay(() => menu2.open(), 2000);
   <div
     class="test"
     v-menu="{
-      top: 10,
-      left: 10,
       items: items,
     }"
   ></div>
@@ -143,8 +141,6 @@ delay(() => menu2.open(), 2000);
   <div
     class="test"
     v-menu="{
-      top: 10,
-      left: 10,
       items: items_t,
     }"
   ></div>

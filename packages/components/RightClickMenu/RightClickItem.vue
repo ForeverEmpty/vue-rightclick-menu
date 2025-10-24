@@ -86,6 +86,7 @@ provide("parentItemEl", _ref);
     :class="{
       'has-submenu': props.type === 'multi',
     }"
+    :disabled="props.disabled"
     @click="handleClick"
     @mouseenter="() => multiMouse(true)"
     @mouseleave="mulitCloseDebounce()"
