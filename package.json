@@ -1,66 +1,77 @@
 {
   "name": "@foreverempty_/vue-rightclick-menu",
-  "version": "0.2.3",
-  "private": false,
+  "version": "1.0.0",
+  "description": "",
   "type": "module",
-  "engines": {
-    "node": "^20.19.0 || >=22.12.0"
-  },
-  "scripts": {
-    "dev": "vite",
-    "build": "run-p type-check \"build-only {@}\" --",
-    "preview": "vite preview",
-    "test:unit": "vitest",
-    "build-only": "vite build",
-    "type-check": "vue-tsc --build",
-    "lint": "eslint . --fix",
-    "format": "prettier --write src/"
-  },
-  "main": "dist/vue-rightclick-menu.umd.js",
-  "module": "dist/vue-rightclick-menu.es.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/umd/index.umd.cjs",
+  "module": "./dist/es/index.js",
+  "types": "./dist/types/core/index.d.ts",
   "files": [
-    "dist",
-    "styles"
+    "dist"
   ],
-  "license": "MIT",
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/vue-rightclick-menu.es.js",
-      "require": "./dist/vue-rightclick-menu.umd.js"
+      "types": "./dist/types/core/index.d.ts",
+      "import": "./dist/es/index.js",
+      "require": "./dist/umd/index.umd.cjs"
     },
-    "./styles/*": {
-      "import": "./styles/*",
-      "require": "./styles/*"
+    "./dist/": {
+      "import": "./dist/",
+      "require": "./dist/"
     }
   },
-  "peerDependencies": {
-    "vue": ">=3.3.0"
+  "sideEffects": [
+    "./dist/index.css"
+  ],
+  "scripts": {
+    "build": "run-p build-es build-umd",
+    "build-es": "vite build --config vite.es.config.ts",
+    "build-umd": "vite build --config vite.umd.config.ts",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "workspaces": [
+    "packages/*"
+  ],
+  "keywords": [
+    "vue3",
+    "vue",
+    "rightclick"
+  ],
+  "author": "ForeverEmpty_",
+  "license": "ISC",
+  "packageManager": "pnpm@10.16.1",
   "dependencies": {
-    "vue": "^3.5.18"
+    "@vue-rightclick-menu/components": "workspace:*",
+    "@vue-rightclick-menu/hooks": "workspace:*",
+    "@vue-rightclick-menu/theme": "workspace:*",
+    "@vue-rightclick-menu/utils": "workspace:*",
+    "vue": "^3.5.22"
   },
   "devDependencies": {
-    "@tsconfig/node22": "^22.0.2",
-    "@types/jsdom": "^21.1.7",
-    "@types/node": "^22.16.5",
+    "@fortawesome/fontawesome-svg-core": "^7.1.0",
+    "@fortawesome/free-solid-svg-icons": "^7.1.0",
+    "@fortawesome/vue-fontawesome": "^3.1.2",
+    "@types/lodash-es": "^4.17.12",
+    "@types/node": "^24.9.1",
+    "@types/shelljs": "^0.8.17",
     "@vitejs/plugin-vue": "^6.0.1",
-    "@vitest/eslint-plugin": "^1.3.4",
-    "@vue/eslint-config-prettier": "^10.2.0",
-    "@vue/eslint-config-typescript": "^14.6.0",
+    "@vitejs/plugin-vue-jsx": "^5.1.1",
     "@vue/test-utils": "^2.4.6",
-    "@vue/tsconfig": "^0.7.0",
-    "eslint": "^9.31.0",
-    "eslint-plugin-vue": "~10.3.0",
-    "jiti": "^2.4.2",
-    "jsdom": "^26.1.0",
-    "npm-run-all2": "^8.0.4",
-    "prettier": "3.6.2",
-    "typescript": "~5.8.0",
-    "vite": "^7.0.6",
-    "vite-plugin-vue-devtools": "^8.0.0",
+    "@vue/tsconfig": "^0.8.1",
+    "jsdom": "^27.0.1",
+    "npm-run-all": "^4.1.5",
+    "postcss-color-mix": "^1.1.0",
+    "postcss-each": "^1.1.0",
+    "postcss-each-variables": "^0.3.0",
+    "postcss-for": "^2.1.1",
+    "postcss-nested": "^7.0.2",
+    "typescript": "~5.9.3",
+    "vite": "^7.1.11",
+    "vite-plugin-compression2": "^2.3.0",
     "vitest": "^3.2.4",
-    "vue-tsc": "^3.0.4"
+    "vue-tsc": "^3.1.1",
+    "lodash-es": "^4.17.21",
+    "shelljs": "^0.10.0",
+    "vite-plugin-dts": "^4.5.4"
   }
 }
