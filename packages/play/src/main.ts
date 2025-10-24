@@ -1,6 +1,7 @@
 import { createApp } from "vue";
 import "./style.css";
 import App from "./App.vue";
-import { vMenu } from "@vue-rightclick-menu/components";
+import RightClickMenu from "@foreverempty_/vue-rightclick-menu";
+import "@foreverempty_/vue-rightclick-menu/dist/index.css";
 
-createApp(App).directive("menu", vMenu).mount("#app");
+createApp(App).use(RightClickMenu).mount("#app");

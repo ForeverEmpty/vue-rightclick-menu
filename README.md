@@ -25,7 +25,7 @@ npm install @foreverempty_/vue-rightclick-menu
 ```ts
 // main.ts
 import RightClickMenu from "@foreverempty_/vue-rightclick-menu";
-import "@foreverempty_/vue-rightclick-menu/index.css";
+import "@foreverempty_/vue-rightclick-menu/dist/index.css";
 //...
 app.use(RightClickMenu);
 ```
@@ -36,7 +36,7 @@ app.use(RightClickMenu);
 
 ```ts
 // main.ts
-import { MenuDirective as vMenu } from "@foreverempty_/vue-rightclick-menu/RightClickMenu";
+import { MenuDirective as vMenu } from "@foreverempty_/vue-rightclick-menu";
 //...
 app.directive("menu", vMenu);
 ```
@@ -44,7 +44,7 @@ app.directive("menu", vMenu);
 命令式调用
 
 ```ts
-import { MenuService as Menu } from "@foreverempty_/vue-rightclick-menu/RightClickMenu";
+import { MenuService as Menu } from "@foreverempty_/vue-rightclick-menu";
 
 const menu = Menu({ props });
 ```

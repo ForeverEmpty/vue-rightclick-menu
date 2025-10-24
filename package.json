@@ -1,17 +1,17 @@
 {
   "name": "@foreverempty_/vue-rightclick-menu",
-  "version": "1.0.0",
-  "description": "",
+  "version": "1.0.2",
+  "description": "A right-click menu implemented using Vue3",
   "type": "module",
   "main": "./dist/umd/index.umd.cjs",
   "module": "./dist/es/index.js",
-  "types": "./dist/types/core/index.d.ts",
+  "types": "./dist/types/index.d.ts",
   "files": [
     "dist"
   ],
   "exports": {
     ".": {
-      "types": "./dist/types/core/index.d.ts",
+      "types": "./dist/types/index.d.ts",
       "import": "./dist/es/index.js",
       "require": "./dist/umd/index.umd.cjs"
     },
@@ -42,7 +42,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "github.com/ForeverEmpty/vue-rightclick-menu"
+    "url": "https://github.com/ForeverEmpty/vue-rightclick-menu"
   },
   "packageManager": "pnpm@10.16.1",
   "dependencies": {

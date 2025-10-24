@@ -2,7 +2,7 @@
 import {
   MenuService,
   type RightClickItemProps,
-} from "@vue-rightclick-menu/components";
+} from "@foreverempty_/vue-rightclick-menu";
 import { delay, noop } from "lodash-es";
 import { ref } from "vue";
 

@@ -112,6 +112,9 @@ importers:
 
   packages/play:
     dependencies:
+      '@foreverempty_/vue-rightclick-menu':
+        specifier: ^1.0.2
+        version: 1.0.2(typescript@5.9.3)
       vue:
         specifier: ^3.5.22
         version: 3.5.22(typescript@5.9.3)
@@ -464,6 +467,9 @@ packages:
     engines: {node: '>=18'}
     cpu: [x64]
     os: [win32]
+
+  '@foreverempty_/vue-rightclick-menu@1.0.2':
+    resolution: {integrity: sha512-zZyBlLFqBCOs2ryN1KatPqvAIY/cMA6jIuvS/4EzEiWCLyKLv9MKXM+0k0jsVTXSBP25nAurbb2buPx+cUjBMw==}
 
   '@fortawesome/fontawesome-common-types@7.1.0':
     resolution: {integrity: sha512-l/BQM7fYntsCI//du+6sEnHOP6a74UixFyOYUyz2DLMXKx+6DEhfR3F2NYGE45XH1JJuIamacb4IZs9S0ZOWLA==}
@@ -2720,6 +2726,16 @@ snapshots:
 
   '@esbuild/win32-x64@0.25.11':
     optional: true
+
+  '@foreverempty_/vue-rightclick-menu@1.0.2(typescript@5.9.3)':
+    dependencies:
+      '@vue-rightclick-menu/components': link:packages/components
+      '@vue-rightclick-menu/hooks': link:packages/hooks
+      '@vue-rightclick-menu/theme': link:packages/theme
+      '@vue-rightclick-menu/utils': link:packages/utils
+      vue: 3.5.22(typescript@5.9.3)
+    transitivePeerDependencies:
+      - typescript
 
   '@fortawesome/fontawesome-common-types@7.1.0': {}
 

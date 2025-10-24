@@ -31,6 +31,7 @@ export default defineConfig({
     dts({
       tsconfigPath: "./tsconfig.build.json",
       outDir: "dist/types",
+      include: ["index.ts", "packages/**/*"],
     }),
     hooksPlugin({
       rmFiles: ["./dist/es", "./dist/theme", "./dist/types"],
